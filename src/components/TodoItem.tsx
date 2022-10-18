@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, FC } from "react";
 import { useRecoilState } from "recoil";
 
 import { todoListState } from "../state/TodoStates";
@@ -16,7 +16,7 @@ const removeItem = (array: TodoContent[], index: number) => {
   return [...array.slice(0, index), ...array.slice(index + 1)];
 };
 
-const TodoItem = (item: TodoContent) => {
+const TodoItem:FC<TodoContent> = (item) => {
   const [todos, setTodos] = useRecoilState(todoListState);
   const index = todos.findIndex((listItem) => listItem === item);
 

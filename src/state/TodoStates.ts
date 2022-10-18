@@ -12,7 +12,7 @@ export const todoListFilteredState = atom<string>({
     default: 'Show All'
 })
 
-export const filteredTodoListState = selector({
+export const filteredTodoListState = selector<TodoContent[]>({
     key: 'filteredTodoList',
     get: ({ get }) => {
         const filter = get(todoListFilteredState)

@@ -4,9 +4,10 @@ import { filteredTodoListState } from "../state/TodoStates";
 import TodoItemCreator from "./TodoItemCreator";
 import TodoItem from "./TodoItem";
 import TodoListFilters from "./TodoListFilters";
+import { TodoContent } from "../types";
 
 const TodoList = () => {
-  const todos = useRecoilValue(filteredTodoListState);
+  const todos = useRecoilValue<TodoContent[]>(filteredTodoListState);
 
   return (
     <div>
