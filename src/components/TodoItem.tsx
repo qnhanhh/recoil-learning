@@ -16,7 +16,7 @@ const removeItem = (array: TodoContent[], index: number) => {
   return [...array.slice(0, index), ...array.slice(index + 1)];
 };
 
-const TodoItem:FC<TodoContent> = (item) => {
+const TodoItem: FC<{ item: TodoContent }> = ({ item }) => {
   const [todos, setTodos] = useRecoilState(todoListState);
   const index = todos.findIndex((listItem) => listItem === item);
 
